@@ -1,0 +1,89 @@
+import os
+import time
+
+def lire_lignes(fichier):
+    """Lit toutes les lignes d'un fichier."""
+    with open(fichier, 'r') as file:
+        return file.readlines()
+
+def ecrire_lignes(fichier, lignes):
+    """Écrit des lignes dans un fichier (écrase le contenu précédent)."""
+    with open(fichier, 'w') as file:
+        file.writelines(lignes)
+
+def tester_canplayer(fichier):
+    """Test un fichier avec canplayer."""
+    print(f"Test du fichier : {fichier}")
+    os.system(f"canplayer -I {fichier}")
+
+def demander_si_porte_ouverte():
+    """Demande à l'utilisateur si la porte s'est ouverte."""
+    while True:
+        reponse = input("La porte s'est-elle ouverte ? (o/n) : ").strip().lower()
+        if reponse in ['o', 'n']:
+            return reponse == 'o'
+        print("Veuillez répondre par 'o' pour oui ou 'n' pour non.")
+
+def renommer_fichier_can():
+    """Renomme le premier fichier candump-2024 trouvé."""
+    for fichier in os.listdir('.'):
+        if fichier.startswith('candump-2024'):
+            nouveau_nom = 'candump.log'
+            os.rename(fichier, nouveau_nom)
+            print(f"Fichier renommé : {fichier} en {nouveau_nom}")
+            return nouveau_nom
+    return None
+
+def diviser_en_deux(lignes):
+    """Divise les lignes en deux parties égales."""
+    mid_point = len(lignes) // 2
+    return lignes[:mid_point], lignes[mid_point:]
+
+def main():
+    # Renommer le fichier candump-2024 s'il existe
+    fichier_a_tester = renommer_fichier_can()
+    if not fichier_a_tester:
+        print("Aucun fichier candump trouvé.")
+        return
+
+    # Lire le contenu du fichier log
+    lignes_originales = lire_lignes(fichier_a_tester)
+
+    fichier_temp = 'candump_temp.log'  # Fichier temporaire qui sera écrasé à chaque itération
+
+    while len(lignes_originales) > 1:
+        # Diviser les lignes en deux parties
+        partie_1, partie_2 = diviser_en_deux(lignes_originales)
+        
+        # Tester la première partie
+        ecrire_lignes(fichier_temp, partie_1)
+        tester_canplayer(fichier_temp)
+        time.sleep(3)  # Attendre pour permettre le test
+        
+        if demander_si_porte_ouverte():
+            print("La porte s'est ouverte avec la première partie.")
+            # Continuer à diviser la première partie
+            lignes_originales = partie_1
+        else:
+            # Tester la deuxième partie
+            print("La porte ne s'est pas ouverte avec la première partie. Test de la deuxième partie.")
+            ecrire_lignes(fichier_temp, partie_2)
+            tester_canplayer(fichier_temp)
+            time.sleep(3)
+            
+            if demander_si_porte_ouverte():
+                print("La porte s'est ouverte avec la deuxième partie.")
+                # Continuer à diviser la deuxième partie
+                lignes_originales = partie_2
+            else:
+                print("Aucune des parties n'a permis d'ouvrir la porte.")
+                return  # Arrêt si aucune des parties ne fonctionne
+
+    # Si une seule ligne reste et qu'elle ouvre la porte, c'est la bonne commande
+    fichier_final = 'candump_resultat_final.log'
+    ecrire_lignes(fichier_final, lignes_originales)
+    print(f"La ligne qui a fonctionné est enregistrée dans {fichier_final}. Contenu :")
+    print(lignes_originales[0].strip())
+
+if __name__ == "__main__":
+    main()
