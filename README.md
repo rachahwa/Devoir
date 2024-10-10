@@ -22,3 +22,5 @@ Cela sert à ne pas conserver de multiples fichiers inutiles.
 
 Enregistrement de la bonne ligne : 
 -> Une fois la ligne exacte trouvée, elle est sauvegardée dans un fichier candump_resultat_final.log.
+
+![image](https://github.com/user-attachments/assets/4cfe91da-bbbd-4c03-9611-c317ce60e5a5)
