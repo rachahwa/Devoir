@@ -1,6 +1,8 @@
 import os
 import time
 
+#La fonction lire_lignes(fichier) permet de lire toutes les lignes d'un fichier texte et de les retourner sous forme de liste.
+#elle ouvre le fichier et 'r' = read, il  est stocké dans la variable file
 def lire_lignes(fichier):
     
     with open(fichier, 'r') as file:
@@ -11,11 +13,13 @@ def ecrire_lignes(fichier, lignes):
     with open(fichier, 'w') as file:
         file.writelines(lignes)
 
+#cette fct permet de rejouer les données du fichier log 
 def tester_canplayer(fichier):
 
     print(f"Test du fichier : {fichier}")
     os.system(f"canplayer -I {fichier}")
 
+#La fonction entre dans une boucle infinie, donc elle va continuer à poser la question jusqu'à ce qu'elle obtienne oui.
 def demander_si_porte_ouverte():
 
     while True:
