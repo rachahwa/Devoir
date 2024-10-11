@@ -64,7 +64,7 @@ En exécutant la commande suivante, on commence à écouter et à enregistrer to
 ```bash
 candump -l vcan0
 ```
-Cela crée un fichier nommé candump.log dans le répertoire courant.
+Cela crée un fichier .log dans le répertoire courant.
 
 # Programme Python pour Analyser les Logs
 
