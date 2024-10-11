@@ -54,10 +54,20 @@ Pour lancer les contrôles, la commande est la suivante :
 
 #Ouverture d'une Porte avec le Joystick
 
-Pour ouvrir une porte avec le joystick, il suffit de faire : **Maj + A**, **Maj + Y**, **Maj + X**, ou **Maj + B**.
+Pour ouvrir une porte avec le joystick, il suffit de faire : **Shift + A**, **Shift + Y**, **Shift + X**, ou **Shift + B** (Shift droit)
+Pour fermer une porte avec le joystick, il suffit de faire : **Shift + A**, **Shift + Y**, **Shift + X**, ou **Shift + B** (Shift gauche)
 En fonction de la lettre, une porte différente s'ouvrira.
 
+A : porte avant gauche
+B : porte arrière gauche
+Y : porte avant droite
+B : porte arrière droite
+
 ## Écoute des Messages CAN
+
+La commande suivante va générer des messages CAN à intervalles réguliers et les envoyer à l'interface vcan0 : 
+```cangen vcan0
+```
 
 En exécutant la commande suivante, on commence à écouter et à enregistrer tous les messages CAN reçus sur l'interface `vcan0` :
 
