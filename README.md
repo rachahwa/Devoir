@@ -17,16 +17,16 @@ Pour compiler le projet, vous aurez besoin des bibliothèques suivantes :
 Utilisez la commande suivante pour installer ces bibliothèques :
 
 ```bash
-sudo apt-get install libsdl2-dev libsdl2-image-dev can-utils```
-
+sudo apt-get install libsdl2-dev libsdl2-image-dev can-utils
+```
 Compilation du Projet
 
 Pour compiler le projet, exécutez les commandes suivantes :
 
 ```bash
 meson setup builddir && cd builddir
-meson compile```
-
+meson compile
+```
 #Configuration d'une Interface CAN Virtuelle
 
 Pour configurer une interface CAN virtuelle, utilisez les commandes suivantes :
@@ -36,20 +36,21 @@ sudo modprobe can
 sudo modprobe vcan
 sudo ip link add dev vcan0 type vcan
 sudo ip link set up vcan0
-
+```
 #Démarrage du Simulateur
 
 Pour démarrer le simulateur d'Instrument Cluster, lancez la commande :
 
 ```bash
-./icsim vcan0```
-
+./icsim vcan0
+```
 #Lancer les Contrôles
 
 Pour lancer les contrôles, la commande est la suivante :
 
 ```bash
-./controls vcan0 ```
+./controls vcan0 
+```
 
 #Ouverture d'une Porte avec le Joystick
 
@@ -59,10 +60,10 @@ En fonction de la lettre, une porte différente s'ouvrira.
 ## Écoute des Messages CAN
 
 En exécutant la commande suivante, on commence à écouter et à enregistrer tous les messages CAN reçus sur l'interface `vcan0` :
-```
-```bash
-candump -l vcan0```
 
+```bash
+candump -l vcan0
+```
 # Programme Python pour Analyser les Logs
 
 Le programme Python que vous pourrez retrouver dans `ScriptOuverturePorte` a pour objectif d'analyser les logs CAN
@@ -77,15 +78,15 @@ Si une partie permet d'ouvrir la porte, le programme continue de diviser cette p
 Créez un fichier `.py` qui va contenir le code de `ScriptOuverturePorte` :
 
 ```bash
-nano ScriptOuverturePorte.py```
-
+nano ScriptOuverturePorte.py
+```
 ## Lancer le Script
 
 Puis, lancez-le :
 
 ```bash
-python3 ScriptOuverturePorte.py```
-
+python3 ScriptOuverturePorte.py
+```
 Il suffira alors de répondre aux questions posées dans le terminal pour pouvoir trouver la bonne ligne de commande.
 Attention : il est plus simple de refermer la porte si jamais elle s'ouvre avant de répondre à la question !!!
 
