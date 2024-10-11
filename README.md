@@ -1,12 +1,60 @@
-Le devoir suivnat porte sur l'utilisation d'un simulateur automobile dont les commandes d'installation peuvent être retrouvé suite à ce lien github :
+L'Instrument Cluster Simulator est un outil qui simule un tableau de bord pour les véhicules utilisant le protocole SocketCAN. Cela permet de tester des fonctionnalités de véhicules sans avoir besoin d'un véhicule physique.
+
+Le devoir suivantt porte donc sur l'utilisation de ce un simulateur automobile dont le github est le suivant:
 
 https://github.com/zombieCraig/ICSim
 
-Ce programme a pour objectif d'analyser les logs CAN capturés, afin d'identifier la commande exacte qui permet d'ouvrir une porte. 
+
+Avant TOUT :
+Pour compiler le projet, vous aurez besoin des bibliothèques suivantes :
+
+SDL2 : Une bibliothèque pour la création d'applications multimédia
+SDL2_Image : Une extension pour gérer les images
+can-utils : Outils pour interagir avec les interfaces CAN
+
+"""sudo apt-get install libsdl2-dev libsdl2-image-dev can-utils"""
+
+Pour compiler le projet : 
+
+""" meson setup builddir && cd builddir
+   meson compile """
+
+Pour configurer une interface CAN virtuelle :
+
+"""sudo modprobe can
+sudo modprobe vcan
+sudo ip link add dev vcan0 type vcan
+sudo ip link set up vcan0 """
+
+Pour démarrer le simulateur d'Instrument Cluster :
+
+"""./icsim vcan0"""
+
+Et enfin pour lancer les contrôles les commandes la commande est la suivante : 
+
+"""./controls vcan0 """
+
+Pour ouvrir une porte avec le joystick, il suffit de faire : maj + A ou maj + Y ou maj + X ou maj + B
+En fonction de la lettre, une porte différente s'ouvrira.
+
+En exécutant la commande suivante , on commence à écouter et à enregistrer tous les messages CAN reçus sur l'interface vcan0 :
+
+""" candump -l vcan0 """  - Cela crée un fichier nommé candump.log dans le répertoire courant.
+
+Le programme python que vous pourrez retrouver dans ScriptOuverturePorte a pour objectif d'analyser les logs CAN capturés, afin d'identifier la commande exacte qui permet d'ouvrir une porte. Nous allons pouvoir par ce moyen hacker la voiture et ainsi compromettre le système. 
 Le programme divise les logs en plusieurs parties et teste chaque partie pour voir si elle contient la commande correcte. 
 Si une partie permet d'ouvrir la porte, le programme continue de diviser cette partie jusqu'à trouver la ligne exacte.
 
-Fonctions :
+Creer un fichier .py, qui va contenir le code de ScriptOuverturePorte : 
+
+""" nano ScriptOuverturePorte.py """
+
+Puis le lancer : """ python3 ScriptOuverturePorte.py """
+
+Il suffira alors de répondre aux questions posées dans le terminal pour pouvoir trouver la bonne ligne de commande.
+Attention : il est plus simple de refermer la porte si jamais elle s'ouvre avant de répondre à la question !!!
+
+Si jamais il vous faut plus d'information, voici une petite description des fonctions utilisées:
 
 Modification du nom des fichiers Logs :
 -> Le programme cherche un fichier log commençant par candump-2024 et le renomme automatiquement en candump.log juste pour faciliter le traitement. 
