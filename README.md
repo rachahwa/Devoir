@@ -58,10 +58,13 @@ Pour ouvrir une porte avec le joystick, il suffit de faire : **Shift + A**, **Sh
 Pour fermer une porte avec le joystick, il suffit de faire : **Shift + A**, **Shift + Y**, **Shift + X**, ou **Shift + B** (Shift gauche)
 En fonction de la lettre, une porte différente s'ouvrira.
 
-A : porte avant gauche
-B : porte arrière gauche
-Y : porte avant droite
-B : porte arrière droite
+- A : porte avant gauche
+  
+- B : porte arrière gauche
+
+- Y : porte avant droite
+
+- B : porte arrière droite
 
 ## Écoute des Messages CAN
 
