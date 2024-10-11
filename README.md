@@ -76,3 +76,23 @@ Enregistrement de la bonne ligne :
 -> Une fois la ligne exacte trouvée, elle est sauvegardée dans un fichier candump_resultat_final.log.
 
 ![image](https://github.com/user-attachments/assets/4cfe91da-bbbd-4c03-9611-c317ce60e5a5)
+
+# Instrument Cluster Simulator
+
+L'Instrument Cluster Simulator est un outil qui simule un tableau de bord pour les véhicules utilisant le protocole SocketCAN. Cela permet de tester des fonctionnalités de véhicules sans avoir besoin d'un véhicule physique.
+
+Le devoir suivant porte donc sur l'utilisation de ce simulateur automobile dont le GitHub est le suivant : [ICSim](https://github.com/zombieCraig/ICSim)
+
+## Avant TOUT
+
+Pour compiler le projet, vous aurez besoin des bibliothèques suivantes :
+
+- **SDL2** : Une bibliothèque pour la création d'applications multimédia.
+- **SDL2_Image** : Une extension pour gérer les images.
+- **can-utils** : Outils pour interagir avec les interfaces CAN.
+
+Utilisez la commande suivante pour installer ces bibliothèques :
+
+```bash
+sudo apt-get install libsdl2-dev libsdl2-image-dev can-utils
+
