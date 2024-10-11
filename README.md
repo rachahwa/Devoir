@@ -12,7 +12,7 @@ SDL2 : Une bibliothèque pour la création d'applications multimédia
 SDL2_Image : Une extension pour gérer les images
 can-utils : Outils pour interagir avec les interfaces CAN
 
-'''sudo apt-get install libsdl2-dev libsdl2-image-dev can-utils'''
+"""sudo apt-get install libsdl2-dev libsdl2-image-dev can-utils"""
 
 Pour compiler le projet : 
 
