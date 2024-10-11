@@ -17,7 +17,7 @@ Pour compiler le projet, vous aurez besoin des bibliothèques suivantes :
 Utilisez la commande suivante pour installer ces bibliothèques :
 
 ```bash
-sudo apt-get install libsdl2-dev libsdl2-image-dev can-utils
+sudo apt-get install libsdl2-dev libsdl2-image-dev can-utils```
 
 Compilation du Projet
 
@@ -25,7 +25,7 @@ Pour compiler le projet, exécutez les commandes suivantes :
 
 ```bash
 meson setup builddir && cd builddir
-meson compile
+meson compile```
 
 #Configuration d'une Interface CAN Virtuelle
 
@@ -42,7 +42,7 @@ sudo ip link set up vcan0
 Pour démarrer le simulateur d'Instrument Cluster, lancez la commande :
 
 ```bash
-./icsim vcan0
+./icsim vcan0```
 
 #Lancer les Contrôles
 
@@ -59,7 +59,7 @@ En fonction de la lettre, une porte différente s'ouvrira.
 ## Écoute des Messages CAN
 
 En exécutant la commande suivante, on commence à écouter et à enregistrer tous les messages CAN reçus sur l'interface `vcan0` :
-
+```
 ```bash
 candump -l vcan0```
 
