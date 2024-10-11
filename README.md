@@ -69,7 +69,8 @@ En fonction de la lettre, une porte différente s'ouvrira.
 ## Écoute des Messages CAN
 
 La commande suivante va générer des messages CAN à intervalles réguliers et les envoyer à l'interface vcan0 : 
-```cangen vcan0
+```bash
+cangen vcan0
 ```
 
 En exécutant la commande suivante, on commence à écouter et à enregistrer tous les messages CAN reçus sur l'interface `vcan0` :
