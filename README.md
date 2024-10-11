@@ -96,3 +96,10 @@ Utilisez la commande suivante pour installer ces bibliothèques :
 ```bash
 sudo apt-get install libsdl2-dev libsdl2-image-dev can-utils
 
+# Compilation du Projet
+
+Pour compiler le projet, exécutez les commandes suivantes :
+
+```bash
+meson setup builddir && cd builddir
+meson compile
