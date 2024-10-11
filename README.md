@@ -5,6 +5,11 @@ Cela permet de tester des fonctionnalités de véhicules sans avoir besoin d'un 
 
 Le devoir suivant porte donc sur l'utilisation de ce simulateur automobile dont le GitHub est le suivant : [ICSim](https://github.com/zombieCraig/ICSim)
 
+
+# Si jamais vous êtes nuls et que vous n'y arrivé pas, tenez voici la réponse ! :
+
+![image](https://github.com/user-attachments/assets/4cfe91da-bbbd-4c03-9611-c317ce60e5a5)
+
 ## Avant TOUT
 
 Pour compiler le projet, vous aurez besoin des bibliothèques suivantes :
@@ -110,10 +115,7 @@ donc dans laquelle on recherche la bonne ligne d'ouverture de la porte. Cela ser
 - **Enregistrement de la bonne ligne** :
     - Une fois la ligne exacte trouvée, elle est sauvegardée dans un fichier `candump_resultat_final.log`.
 
----
 
 
-# Si jamais vous êtes nuls et que vous n'y arrivé pas, tenez voici la réponse ! :
 
-![image](https://github.com/user-attachments/assets/4cfe91da-bbbd-4c03-9611-c317ce60e5a5)
 
