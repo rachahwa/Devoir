@@ -49,7 +49,7 @@ Pour démarrer le simulateur d'Instrument Cluster, lancez la commande :
 Pour lancer les contrôles, la commande est la suivante :
 
 ```bash
-./controls vcan0
+./controls vcan0 ```
 
 #Ouverture d'une Porte avec le Joystick
 
@@ -61,7 +61,7 @@ En fonction de la lettre, une porte différente s'ouvrira.
 En exécutant la commande suivante, on commence à écouter et à enregistrer tous les messages CAN reçus sur l'interface `vcan0` :
 
 ```bash
-candump -l vcan0
+candump -l vcan0```
 
 # Programme Python pour Analyser les Logs
 
@@ -77,14 +77,14 @@ Si une partie permet d'ouvrir la porte, le programme continue de diviser cette p
 Créez un fichier `.py` qui va contenir le code de `ScriptOuverturePorte` :
 
 ```bash
-nano ScriptOuverturePorte.py
+nano ScriptOuverturePorte.py```
 
 ## Lancer le Script
 
 Puis, lancez-le :
 
 ```bash
-python3 ScriptOuverturePorte.py
+python3 ScriptOuverturePorte.py```
 
 Il suffira alors de répondre aux questions posées dans le terminal pour pouvoir trouver la bonne ligne de commande.
 Attention : il est plus simple de refermer la porte si jamais elle s'ouvre avant de répondre à la question !!!
@@ -110,7 +110,7 @@ donc dans laquelle on recherche la bonne ligne d'ouverture de la porte. Cela ser
 
 - **Enregistrement de la bonne ligne** :
     - Une fois la ligne exacte trouvée, elle est sauvegardée dans un fichier `candump_resultat_final.log`.
-'''
+```
 
 # Si jamais vous êtes nuls et que vous n'y arrivé pas, tenez voici la réponse ! :
 
