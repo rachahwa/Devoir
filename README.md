@@ -111,7 +111,7 @@ donc dans laquelle on recherche la bonne ligne d'ouverture de la porte. Cela ser
 
 - **Enregistrement de la bonne ligne** :
     - Une fois la ligne exacte trouvée, elle est sauvegardée dans un fichier `candump_resultat_final.log`.
-```
+
 
 # Si jamais vous êtes nuls et que vous n'y arrivé pas, tenez voici la réponse ! :
 
