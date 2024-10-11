@@ -64,6 +64,8 @@ En exécutant la commande suivante, on commence à écouter et à enregistrer to
 ```bash
 candump -l vcan0
 ```
+Cela crée un fichier nommé candump.log dans le répertoire courant.
+
 # Programme Python pour Analyser les Logs
 
 Le programme Python que vous pourrez retrouver dans `ScriptOuverturePorte` a pour objectif d'analyser les logs CAN
