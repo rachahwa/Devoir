@@ -1,3 +1,7 @@
+Le devoir suivnat porte sur l'utilisation d'un simulateur automobile dont les commandes d'installation peuvent être retrouvé suite à ce lien github :
+
+https://github.com/zombieCraig/ICSim
+
 Ce programme a pour objectif d'analyser les logs CAN capturés, afin d'identifier la commande exacte qui permet d'ouvrir une porte. 
 Le programme divise les logs en plusieurs parties et teste chaque partie pour voir si elle contient la commande correcte. 
 Si une partie permet d'ouvrir la porte, le programme continue de diviser cette partie jusqu'à trouver la ligne exacte.
