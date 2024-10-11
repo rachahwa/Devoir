@@ -96,7 +96,7 @@ Utilisez la commande suivante pour installer ces bibliothèques :
 ```bash
 sudo apt-get install libsdl2-dev libsdl2-image-dev can-utils
 
-# Compilation du Projet
+Compilation du Projet
 
 Pour compiler le projet, exécutez les commandes suivantes :
 
@@ -104,7 +104,7 @@ Pour compiler le projet, exécutez les commandes suivantes :
 meson setup builddir && cd builddir
 meson compile
 
-# Configuration d'une Interface CAN Virtuelle
+Configuration d'une Interface CAN Virtuelle
 
 Pour configurer une interface CAN virtuelle, utilisez les commandes suivantes :
 
@@ -114,17 +114,28 @@ sudo modprobe vcan
 sudo ip link add dev vcan0 type vcan
 sudo ip link set up vcan0
 
-# Démarrage du Simulateur
+Démarrage du Simulateur
 
 Pour démarrer le simulateur d'Instrument Cluster, lancez la commande :
 
 ```bash
 ./icsim vcan0
 
-# Lancer les Contrôles
+Lancer les Contrôles
 
 Pour lancer les contrôles, la commande est la suivante :
 
 ```bash
 ./controls vcan0
+
+Ouverture d'une Porte avec le Joystick
+
+Pour ouvrir une porte avec le joystick, il suffit de faire : **Maj + A**, **Maj + Y**, **Maj + X**, ou **Maj + B**. En fonction de la lettre, une porte différente s'ouvrira.
+
+## Écoute des Messages CAN
+
+En exécutant la commande suivante, on commence à écouter et à enregistrer tous les messages CAN reçus sur l'interface `vcan0` :
+
+```bash
+candump -l vcan0
 
