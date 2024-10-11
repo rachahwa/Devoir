@@ -103,3 +103,28 @@ Pour compiler le projet, exécutez les commandes suivantes :
 ```bash
 meson setup builddir && cd builddir
 meson compile
+
+# Configuration d'une Interface CAN Virtuelle
+
+Pour configurer une interface CAN virtuelle, utilisez les commandes suivantes :
+
+```bash
+sudo modprobe can
+sudo modprobe vcan
+sudo ip link add dev vcan0 type vcan
+sudo ip link set up vcan0
+
+# Démarrage du Simulateur
+
+Pour démarrer le simulateur d'Instrument Cluster, lancez la commande :
+
+```bash
+./icsim vcan0
+
+# Lancer les Contrôles
+
+Pour lancer les contrôles, la commande est la suivante :
+
+```bash
+./controls vcan0
+
